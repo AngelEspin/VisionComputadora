@@ -1,0 +1,1762 @@
+[
+    {
+        "id": "b16429ef48293402",
+        "type": "tab",
+        "label": "Comunicación IOT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "47e4e76607ccb302",
+        "type": "serial-port",
+        "serialport": "COM4",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "c89139f2de6f11fc",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.30.42",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "DB1,X8.0",
+                "name": "Dato Booleano 0"
+            },
+            {
+                "addr": "DB1,X8.1",
+                "name": "Dato Booleano 1"
+            },
+            {
+                "addr": "DB1,X8.2",
+                "name": "Dato Booleano 2"
+            },
+            {
+                "addr": "DB1,X8.3",
+                "name": "Dato Booleano 3"
+            },
+            {
+                "addr": "DB1,W0",
+                "name": "Cantidad rojos"
+            },
+            {
+                "addr": "DB1,W2",
+                "name": "Cantidad amarillos"
+            },
+            {
+                "addr": "DB1,W4",
+                "name": "Cantidad verdes"
+            },
+            {
+                "addr": "DB1,W6",
+                "name": "Cantidad errores"
+            },
+            {
+                "addr": "DB1,X12.0",
+                "name": "Indicador error"
+            },
+            {
+                "addr": "DB1,X12.1",
+                "name": "Indicador de marcha"
+            },
+            {
+                "addr": "DB1,X12.2",
+                "name": "Indicador de Paro"
+            },
+            {
+                "addr": "DB1,X12.3",
+                "name": "Indicador de tamano adecuado"
+            },
+            {
+                "addr": "DB1,W10",
+                "name": "Grados del servo"
+            }
+        ]
+    },
+    {
+        "id": "914a350f85a1619b",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Dato Booleano 0",
+        "diff": true,
+        "name": "Rojo",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "c5d2ce49fb7ebd82"
+            ]
+        ]
+    },
+    {
+        "id": "16617d951a001ecf",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Dato Booleano 1",
+        "diff": true,
+        "name": "Amarillo",
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "3209cf32e8f7c95b"
+            ]
+        ]
+    },
+    {
+        "id": "ec033163032dee53",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Cantidad rojos",
+        "diff": true,
+        "name": "C_Rojo",
+        "x": 190,
+        "y": 640,
+        "wires": [
+            [
+                "fca2a6af2f2636b1"
+            ]
+        ]
+    },
+    {
+        "id": "03243422a57ac9a4",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Cantidad amarillos",
+        "diff": true,
+        "name": "C_Amarillo",
+        "x": 200,
+        "y": 700,
+        "wires": [
+            [
+                "72677a570bd3b09a"
+            ]
+        ]
+    },
+    {
+        "id": "338013d773c93217",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Cantidad verdes",
+        "diff": true,
+        "name": "C_Verde",
+        "x": 200,
+        "y": 760,
+        "wires": [
+            [
+                "25a8af25827822e8"
+            ]
+        ]
+    },
+    {
+        "id": "613adeeeefa7c945",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Cantidad errores",
+        "diff": true,
+        "name": "C_Error",
+        "x": 190,
+        "y": 820,
+        "wires": [
+            [
+                "2e64f82d27533bb9"
+            ]
+        ]
+    },
+    {
+        "id": "4efddcd33b824ada",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Indicador error",
+        "diff": true,
+        "name": "B_Error",
+        "x": 190,
+        "y": 880,
+        "wires": [
+            [
+                "62441a191dc858aa"
+            ]
+        ]
+    },
+    {
+        "id": "4fe6fc9b6342073f",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Indicador de marcha",
+        "diff": true,
+        "name": "B_Marcha",
+        "x": 200,
+        "y": 920,
+        "wires": [
+            [
+                "31fb9ff30f203f76"
+            ]
+        ]
+    },
+    {
+        "id": "6bb85ef2e17d9c0e",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Indicador de Paro",
+        "diff": true,
+        "name": "B_Paro",
+        "x": 190,
+        "y": 960,
+        "wires": [
+            [
+                "9c57a5e16d5936fc"
+            ]
+        ]
+    },
+    {
+        "id": "52f57ea3299f4448",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Indicador de tamano adecuado",
+        "diff": true,
+        "name": "B_Caja_pequena",
+        "x": 220,
+        "y": 1000,
+        "wires": [
+            [
+                "06ad1d03bb43dd5f"
+            ]
+        ]
+    },
+    {
+        "id": "8cc98dfd842088d6",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Grados del servo",
+        "diff": true,
+        "name": "Grados_servomotor",
+        "x": 230,
+        "y": 1060,
+        "wires": [
+            [
+                "61488a8fa7a63ec3"
+            ]
+        ]
+    },
+    {
+        "id": "217668ed7bc94163",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "fb5a6a9d67d9933f",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_censo_rojo",
+        "func": "var local= {\"Indicador_rojo\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 400,
+        "wires": [
+            [
+                "217668ed7bc94163"
+            ]
+        ]
+    },
+    {
+        "id": "c5d2ce49fb7ebd82",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "fb5a6a9d67d9933f"
+            ]
+        ]
+    },
+    {
+        "id": "3209cf32e8f7c95b",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "cf71a860312be483"
+            ]
+        ]
+    },
+    {
+        "id": "ec741a2054db6677",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [
+                "91dd3764734f0acd"
+            ]
+        ]
+    },
+    {
+        "id": "62441a191dc858aa",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "722c3be81ec6e0e6"
+            ]
+        ]
+    },
+    {
+        "id": "cf71a860312be483",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_censo_amarillo",
+        "func": "var local= {\"Indicador_amarillo\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 460,
+        "wires": [
+            [
+                "112ffa7652403855"
+            ]
+        ]
+    },
+    {
+        "id": "722c3be81ec6e0e6",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_censo_error",
+        "func": "var local= {\"Indicador_error\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 880,
+        "wires": [
+            [
+                "e644e54318531019"
+            ]
+        ]
+    },
+    {
+        "id": "91dd3764734f0acd",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_censo_verde",
+        "func": "var local= {\"Indicador_verde\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 520,
+        "wires": [
+            [
+                "a576e3a39ba24c99"
+            ]
+        ]
+    },
+    {
+        "id": "112ffa7652403855",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a576e3a39ba24c99",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e644e54318531019",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "31fb9ff30f203f76",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 920,
+        "wires": [
+            [
+                "62730cf29b61ee05"
+            ]
+        ]
+    },
+    {
+        "id": "62730cf29b61ee05",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_Marcha",
+        "func": "var local= {\"Indicador_Marcha\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 920,
+        "wires": [
+            [
+                "41745689dd536212"
+            ]
+        ]
+    },
+    {
+        "id": "41745689dd536212",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "9c57a5e16d5936fc",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 960,
+        "wires": [
+            [
+                "62a9627cd0ef55e5"
+            ]
+        ]
+    },
+    {
+        "id": "62a9627cd0ef55e5",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_Paro",
+        "func": "var local= {\"Indicador_paro\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 960,
+        "wires": [
+            [
+                "f64f122d2d95d3db"
+            ]
+        ]
+    },
+    {
+        "id": "f64f122d2d95d3db",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 840,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "06ad1d03bb43dd5f",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 1000,
+        "wires": [
+            [
+                "01073874fe457d0a"
+            ]
+        ]
+    },
+    {
+        "id": "01073874fe457d0a",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_caja_debajo del limite",
+        "func": "var local= {\"Indicador_pequena\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1000,
+        "wires": [
+            [
+                "cdfe905cfad9cdaf"
+            ]
+        ]
+    },
+    {
+        "id": "cdfe905cfad9cdaf",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 960,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "61488a8fa7a63ec3",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Indicador_grados_del _servomotor",
+        "func": "var local= {\"Grados servomotor\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1060,
+        "wires": [
+            [
+                "40043ad25c768b7e"
+            ]
+        ]
+    },
+    {
+        "id": "40043ad25c768b7e",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 800,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "fca2a6af2f2636b1",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Contador_rojo",
+        "func": "var local= {\"Contador_rojo\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 640,
+        "wires": [
+            [
+                "52afb5590efab7a4"
+            ]
+        ]
+    },
+    {
+        "id": "52afb5590efab7a4",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 720,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "72677a570bd3b09a",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Contador_amarillo",
+        "func": "var local= {\"C_amarillo\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 700,
+        "wires": [
+            [
+                "c244a1e1fcee4837"
+            ]
+        ]
+    },
+    {
+        "id": "c244a1e1fcee4837",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 720,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "25a8af25827822e8",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Contador_verde",
+        "func": "var local= {\"Contador_verde\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 760,
+        "wires": [
+            [
+                "a30e531e7009c4c8"
+            ]
+        ]
+    },
+    {
+        "id": "a30e531e7009c4c8",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 720,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "2e64f82d27533bb9",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "Contador_errores",
+        "func": "var local= {\"Contador_errores\":msg.payload};\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 820,
+        "wires": [
+            [
+                "dcf7f8926030fb84"
+            ]
+        ]
+    },
+    {
+        "id": "dcf7f8926030fb84",
+        "type": "ubidots_out",
+        "z": "b16429ef48293402",
+        "name": "Ubidots_clasificador",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "label_device": "",
+        "device_label": "iot_clasificador",
+        "tier": "business",
+        "tls_checkbox": true,
+        "x": 720,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "96c638967c8b676e",
+        "type": "s7 out",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "variable": "Dato Booleano 0",
+        "name": "Rojo",
+        "x": 1690,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5d4e5f3aac78eb08",
+        "type": "s7 out",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "variable": "Dato Booleano 1",
+        "name": "Amarillo",
+        "x": 1700,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "318a0aa14d7b7f21",
+        "type": "s7 out",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "variable": "Dato Booleano 2",
+        "name": "Verde",
+        "x": 1690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f7719558db8c7414",
+        "type": "s7 out",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "variable": "Indicador de tamano adecuado",
+        "name": "Caja_pequena",
+        "x": 1720,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "734fd2cb5e1f197c",
+        "type": "exec",
+        "z": "b16429ef48293402",
+        "command": "python OneDrive/Documentos/OPEN_CV/Color-size.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Codigo VC",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "c9bd743378aad2cd",
+                "12b99ff1aa07be3c",
+                "876f8aa5764d3181",
+                "863df8dabbd7c2fb"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "503bc2e73f081d81",
+        "type": "inject",
+        "z": "b16429ef48293402",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "8",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "734fd2cb5e1f197c"
+            ]
+        ]
+    },
+    {
+        "id": "b2754e11180e6794",
+        "type": "debug",
+        "z": "b16429ef48293402",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c9bd743378aad2cd",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 2",
+        "func": "var local=msg.payload[8];\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "699f28bb0a867848"
+            ]
+        ]
+    },
+    {
+        "id": "fff610b353b9d38b",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "T",
+                "fromt": "str",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "F",
+                "fromt": "str",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 60,
+        "wires": [
+            [
+                "e9f4cd065131343a",
+                "01073874fe457d0a"
+            ]
+        ]
+    },
+    {
+        "id": "795e575a4b58c397",
+        "type": "debug",
+        "z": "b16429ef48293402",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7052940148c551b3",
+        "type": "debug",
+        "z": "b16429ef48293402",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "12b99ff1aa07be3c",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 3",
+        "func": "var local=msg.payload[2];\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 60,
+        "wires": [
+            [
+                "fff610b353b9d38b"
+            ]
+        ]
+    },
+    {
+        "id": "e9f4cd065131343a",
+        "type": "debug",
+        "z": "b16429ef48293402",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "876f8aa5764d3181",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 4",
+        "func": "var local=msg.payload[13];\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "4b2786d3e491ff85"
+            ]
+        ]
+    },
+    {
+        "id": "863df8dabbd7c2fb",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 5",
+        "func": "var local=msg.payload[18];\nreturn {\"payload\": local};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "77307a6068b63763"
+            ]
+        ]
+    },
+    {
+        "id": "699f28bb0a867848",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "T",
+                "fromt": "str",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "F",
+                "fromt": "str",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 100,
+        "wires": [
+            [
+                "fb5a6a9d67d9933f",
+                "b2754e11180e6794"
+            ]
+        ]
+    },
+    {
+        "id": "4b2786d3e491ff85",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "T",
+                "fromt": "str",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "F",
+                "fromt": "str",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "cf71a860312be483",
+                "795e575a4b58c397"
+            ]
+        ]
+    },
+    {
+        "id": "77307a6068b63763",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "Cambio a 0 y 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "T",
+                "fromt": "str",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "F",
+                "fromt": "str",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "91dd3764734f0acd",
+                "7052940148c551b3"
+            ]
+        ]
+    },
+    {
+        "id": "f47f64ee937521a4",
+        "type": "ubidots_in",
+        "z": "b16429ef48293402",
+        "tier": "business",
+        "name": "Caja_tamano",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "device_label": "iot_clasificador",
+        "tls_checkbox_in": true,
+        "custom_topic_checkbox": false,
+        "label_variable_1": "indicador_pequena",
+        "label_variable_2": "",
+        "label_variable_3": "",
+        "label_variable_4": "",
+        "label_variable_5": "",
+        "label_variable_6": "",
+        "label_variable_7": "",
+        "label_variable_8": "",
+        "label_variable_9": "",
+        "label_variable_10": "",
+        "checkbox_variable_1_last_value": true,
+        "checkbox_variable_2_last_value": true,
+        "checkbox_variable_3_last_value": true,
+        "checkbox_variable_4_last_value": true,
+        "checkbox_variable_5_last_value": true,
+        "checkbox_variable_6_last_value": true,
+        "checkbox_variable_7_last_value": true,
+        "checkbox_variable_8_last_value": true,
+        "checkbox_variable_9_last_value": true,
+        "checkbox_variable_10_last_value": true,
+        "x": 1190,
+        "y": 60,
+        "wires": [
+            [
+                "05495e93fe75e870"
+            ]
+        ]
+    },
+    {
+        "id": "575faa7fbc0d80dc",
+        "type": "ubidots_in",
+        "z": "b16429ef48293402",
+        "tier": "business",
+        "name": "Rojo",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "device_label": "iot_clasificador",
+        "tls_checkbox_in": true,
+        "custom_topic_checkbox": false,
+        "label_variable_1": "indicador_rojo",
+        "label_variable_2": "",
+        "label_variable_3": "",
+        "label_variable_4": "",
+        "label_variable_5": "",
+        "label_variable_6": "",
+        "label_variable_7": "",
+        "label_variable_8": "",
+        "label_variable_9": "",
+        "label_variable_10": "",
+        "checkbox_variable_1_last_value": true,
+        "checkbox_variable_2_last_value": true,
+        "checkbox_variable_3_last_value": true,
+        "checkbox_variable_4_last_value": true,
+        "checkbox_variable_5_last_value": true,
+        "checkbox_variable_6_last_value": true,
+        "checkbox_variable_7_last_value": true,
+        "checkbox_variable_8_last_value": true,
+        "checkbox_variable_9_last_value": true,
+        "checkbox_variable_10_last_value": true,
+        "x": 1170,
+        "y": 100,
+        "wires": [
+            [
+                "94f610bbbd73e514"
+            ]
+        ]
+    },
+    {
+        "id": "753e5e4169d2b483",
+        "type": "ubidots_in",
+        "z": "b16429ef48293402",
+        "tier": "business",
+        "name": "Amarillo",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "device_label": "iot_clasificador",
+        "tls_checkbox_in": true,
+        "custom_topic_checkbox": false,
+        "label_variable_1": "indicador_amarillo",
+        "label_variable_2": "",
+        "label_variable_3": "",
+        "label_variable_4": "",
+        "label_variable_5": "",
+        "label_variable_6": "",
+        "label_variable_7": "",
+        "label_variable_8": "",
+        "label_variable_9": "",
+        "label_variable_10": "",
+        "checkbox_variable_1_last_value": true,
+        "checkbox_variable_2_last_value": true,
+        "checkbox_variable_3_last_value": true,
+        "checkbox_variable_4_last_value": true,
+        "checkbox_variable_5_last_value": true,
+        "checkbox_variable_6_last_value": true,
+        "checkbox_variable_7_last_value": true,
+        "checkbox_variable_8_last_value": true,
+        "checkbox_variable_9_last_value": true,
+        "checkbox_variable_10_last_value": true,
+        "x": 1180,
+        "y": 140,
+        "wires": [
+            [
+                "0d18e85f0a156017"
+            ]
+        ]
+    },
+    {
+        "id": "92f08d015c56c5d9",
+        "type": "ubidots_in",
+        "z": "b16429ef48293402",
+        "tier": "business",
+        "name": "Verde",
+        "token": "BBUS-Xc1LzABtcnXJE7gykU8HCWKDhkUiAA",
+        "device_label": "iot_clasificador",
+        "tls_checkbox_in": true,
+        "custom_topic_checkbox": false,
+        "label_variable_1": "indicador_verde",
+        "label_variable_2": "",
+        "label_variable_3": "",
+        "label_variable_4": "",
+        "label_variable_5": "",
+        "label_variable_6": "",
+        "label_variable_7": "",
+        "label_variable_8": "",
+        "label_variable_9": "",
+        "label_variable_10": "",
+        "checkbox_variable_1_last_value": true,
+        "checkbox_variable_2_last_value": true,
+        "checkbox_variable_3_last_value": true,
+        "checkbox_variable_4_last_value": true,
+        "checkbox_variable_5_last_value": true,
+        "checkbox_variable_6_last_value": true,
+        "checkbox_variable_7_last_value": true,
+        "checkbox_variable_8_last_value": true,
+        "checkbox_variable_9_last_value": true,
+        "checkbox_variable_10_last_value": true,
+        "x": 1170,
+        "y": 180,
+        "wires": [
+            [
+                "8938952367d42423"
+            ]
+        ]
+    },
+    {
+        "id": "05495e93fe75e870",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 6",
+        "func": "var lastValue = msg.payload.indicador_pequena.value;\nmsg.payload=lastValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 60,
+        "wires": [
+            [
+                "09c22dd796c86c61"
+            ]
+        ]
+    },
+    {
+        "id": "8938952367d42423",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 7",
+        "func": "var lastValue = msg.payload.indicador_verde.value;\nmsg.payload=lastValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 180,
+        "wires": [
+            [
+                "86d658720f1ec52f"
+            ]
+        ]
+    },
+    {
+        "id": "94f610bbbd73e514",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 8",
+        "func": "var lastValue=msg.payload.indicador_rojo.value;\nmsg.payload=lastValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 100,
+        "wires": [
+            [
+                "a4c2fb523a2896e4"
+            ]
+        ]
+    },
+    {
+        "id": "0d18e85f0a156017",
+        "type": "function",
+        "z": "b16429ef48293402",
+        "name": "function 9",
+        "func": "var lastValue=msg.payload.indicador_amarillo.value;\nmsg.payload=lastValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 140,
+        "wires": [
+            [
+                "b62c3bd65d1f16ec"
+            ]
+        ]
+    },
+    {
+        "id": "86d658720f1ec52f",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 180,
+        "wires": [
+            [
+                "318a0aa14d7b7f21"
+            ]
+        ]
+    },
+    {
+        "id": "b62c3bd65d1f16ec",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 140,
+        "wires": [
+            [
+                "5d4e5f3aac78eb08"
+            ]
+        ]
+    },
+    {
+        "id": "a4c2fb523a2896e4",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 100,
+        "wires": [
+            [
+                "96c638967c8b676e"
+            ]
+        ]
+    },
+    {
+        "id": "09c22dd796c86c61",
+        "type": "change",
+        "z": "b16429ef48293402",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 60,
+        "wires": [
+            [
+                "f7719558db8c7414"
+            ]
+        ]
+    },
+    {
+        "id": "ca255499c1a34693",
+        "type": "s7 in",
+        "z": "b16429ef48293402",
+        "endpoint": "c89139f2de6f11fc",
+        "mode": "single",
+        "variable": "Dato Booleano 2",
+        "diff": true,
+        "name": "Verde",
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "ec741a2054db6677"
+            ]
+        ]
+    }
+]
